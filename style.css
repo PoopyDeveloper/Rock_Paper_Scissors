@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    background-color: rgba(33, 28, 28, 0.933);
+}
+h1 {
+    position: absolute;
+    top: 20px;
+}
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.count {
+    font-size: 50px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.buttons {
+    position: absolute;
+    bottom: 50px;
+}
+.rock, .paper, .scissor {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.ai, .me {
+    width: 200px;
+    height: 200px;
+    margin: 0 20px;
+    border: 10px solid rgb(216, 191, 26);
+    padding: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+.lai, .lme {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.lai label, .lme label {
+    position: absolute;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    left: 50%;
+    bottom: -20%;
+    transform: translateX(-50%);
+}
+.lai .show, .lme .show {
+    animation: scale 1s infinite;
+}
+
+@keyframes scale {
+    0% { 
+        transform: scale(1); 
+    }50% { 
+        transform: scale(1.2); 
+    }100%{
+        transform: scale(1);
+    }
+}
