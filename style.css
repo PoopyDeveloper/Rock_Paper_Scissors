@@ -12,10 +12,12 @@
     font-family: Arial, sans-serif;
     flex-direction: column;
     background-color: rgba(33, 28, 28, 0.933);
+    min-width: 300px;
 }
 h1 {
     position: absolute;
     top: 20px;
+    text-align: center;
 }
 .choices {
     display: flex;
@@ -24,7 +26,7 @@ h1 {
     flex-direction: row;
 }
 .count {
-    font-size: 50px;
+    font-size: 30px;
     margin: 20px 0;
     font-weight: bold;
 }
@@ -33,19 +35,21 @@ h1 {
     bottom: 50px;
 }
 .rock, .paper, .scissor {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 20px;
+    padding: 8px 16px;
+    margin: 0 5px;
+    font-size: 16px;
     cursor: pointer;
 }
 .ai, .me {
-    width: 200px;
-    height: 200px;
-    margin: 0 20px;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
     border: 10px solid rgb(216, 191, 26);
     padding: 20px;
     border-radius: 50%;
     background-color: black;
+    min-width: 100px;
+    min-height: 100px;
 }
 .lai, .lme {
     display: flex;
@@ -57,10 +61,10 @@ h1 {
     position: absolute;
     text-align: center;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     left: 50%;
-    bottom: -20%;
+    bottom: -25%;
     transform: translateX(-50%);
 }
 .lai .show, .lme .show {
@@ -68,11 +72,47 @@ h1 {
 }
 
 @keyframes scale {
-    0% { 
-        transform: scale(1); 
-    }50% { 
-        transform: scale(1.2); 
-    }100%{
-        transform: scale(1);
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .ai, .me {
+        width: 150px;
+        height: 150px;
+        margin: 0 15px;
+    }
+    .count {
+        font-size: 40px;
+    }
+    .rock, .paper, .scissor {
+        padding: 9px 18px;
+        margin: 0 7px;
+        font-size: 18px;
+    }
+    .lai label, .lme label {
+        font-size: 18px;
+        bottom: -22%;
+    }
+}
+
+@media (min-width: 769px) {
+    .ai, .me {
+        width: 200px;
+        height: 200px;
+        margin: 0 20px;
+    }
+    .count {
+        font-size: 50px;
+    }
+    .rock, .paper, .scissor {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+    .lai label, .lme label {
+        font-size: 20px;
+        bottom: -20%;
     }
 }
